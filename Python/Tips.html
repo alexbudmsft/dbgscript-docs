@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tips and Tricks &mdash; DbgScript 1.0.3 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DbgScript 1.0.3 documentation" href="../index.html"/>
+        <link rel="up" title="Python Script Provider" href="../Python.html"/>
+        <link rel="next" title="Ruby Script Provider" href="../Ruby.html"/>
+        <link rel="prev" title="StackFrame class" href="StackFrame.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> DbgScript
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation.html#rd-party-provider-registration">3rd Party Provider Registration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial.html#basics">Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#running-scripts">Running Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#ad-hoc-evaluation">Ad-hoc Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#other-entry-points">Other Entry Points</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial.html#scriptpath">!scriptpath</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Reference.html">DbgScript Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Reference.html#debugger-entry-points">Debugger Entry Points</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#runscript">!runscript</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#evalstring">!evalstring</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id1">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id2">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id3">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#scriptpath">!scriptpath</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id4">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id5">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#startvm">!startvm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id6">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id7">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#stopvm">!stopvm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id8">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id9">Description</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Python.html">Python Script Provider</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dbgscript.html">dbgscript Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thread.html">Thread class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TypedObject.html">TypedObject class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StackFrame.html">StackFrame class</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Tips and Tricks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dropping-into-a-repl">Dropping into a REPL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debugging-with-pdb">Debugging with pdb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debugging-with-visual-studio">Debugging with Visual Studio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#step-1">Step 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-2">Step 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-3">Step 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#step-4">Step 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Ruby.html">Ruby Script Provider</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/DbgScript.html">DbgScript Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/Thread.html">Thread class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/TypedObject.html">TypedObject class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/StackFrame.html">StackFrame class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/Tips.html">Tips and Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Lua.html">Lua Script Provider</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/dbgscript.html">dbgscript Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/Thread.html">Thread class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/StackFrame.html">StackFrame class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/TypedObject.html">TypedObject class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/Tips.html">Tips and Tricks</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DbgScript</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../Python.html">Python Script Provider</a> &raquo;</li>
+      
+    <li>Tips and Tricks</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/Python/Tips.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="tips-and-tricks">
+<h1>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dropping-into-a-repl">
+<h2>Dropping into a REPL<a class="headerlink" href="#dropping-into-a-repl" title="Permalink to this headline">¶</a></h2>
+<p>You can drop into an interactive <a class="reference external" href="https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop">REPL</a> with:</p>
+<div class="highlight-python"><div class="highlight"><pre>!evalstring -l py &quot;import code; code.interact(local=locals())&quot;
+</pre></div>
+</div>
+<p>This is essentially the same as if you were to run the Python interactive
+interpreter:</p>
+<div class="highlight-python"><div class="highlight"><pre>0:031&gt; !evalstring -l py &quot;import code; code.interact(local=locals())&quot;
+Python 3.6.0a0 (default:262c43c71927+, Jul 23 2015, 13:46:09) [MSC v.1900 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+(InteractiveConsole)
+&gt;&gt;&gt; import dbgscript
+import dbgscript
+&gt;&gt;&gt; dbgscript.get_threads
+dbgscript.get_threads
+&lt;built-in function get_threads&gt;
+&gt;&gt;&gt; dbgscript.get_threads()
+dbgscript.get_threads()
+(&lt;dbgscript.Thread object at 0x00000045F0A0BE50&gt;, ...&lt;snip&gt;, &lt;dbgscript.Thread object at 0x00000045F0A0BEE0&gt;)
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>To leave the REPL, type <code class="docutils literal"><span class="pre">quit()</span></code>.</p>
+</div>
+<div class="section" id="debugging-with-pdb">
+<h2>Debugging with pdb<a class="headerlink" href="#debugging-with-pdb" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://docs.python.org/3.6/library/pdb.html">pdb</a> is the command line Python Debugger.</p>
+<p>You can run it as a module via:</p>
+<div class="highlight-python"><div class="highlight"><pre>0:031&gt; !runscript -l py -- -m pdb E:\dev\dbgscripts_sql\python\hkbaseset.py
+&gt; e:\dev\dbgscripts_sql\python\hkbaseset.py(3)&lt;module&gt;()
+-&gt; &quot;&quot;&quot;
+</pre></div>
+</div>
+<p>Consult the <a class="reference external" href="https://docs.python.org/3.6/library/pdb.html">pdb</a> documentation for usage.</p>
+<p>Sample session:</p>
+<div class="highlight-python"><div class="highlight"><pre>0:031&gt; !runscript -l py -- -m pdb E:\dev\dbgscripts_sql\python\hkbaseset.py
+&gt; e:\dev\dbgscripts_sql\python\hkbaseset.py(3)&lt;module&gt;()
+-&gt; &quot;&quot;&quot;
+(Pdb) n
+n
+&gt; e:\dev\dbgscripts_sql\python\hkbaseset.py(5)&lt;module&gt;()
+-&gt; import sys, dbgscript
+(Pdb) n
+n
+&gt; e:\dev\dbgscripts_sql\python\hkbaseset.py(7)&lt;module&gt;()
+-&gt; def dump_base_set_bucket(bucket, link_offset, full_elem_type):
+(Pdb) b dump_base_set
+b dump_base_set
+Breakpoint 1 at e:\dev\dbgscripts_sql\python\hkbaseset.py:17
+(Pdb) b
+b
+Num Type         Disp Enb   Where
+1   breakpoint   keep yes   at e:\dev\dbgscripts_sql\python\hkbaseset.py:17
+(Pdb)
+</pre></div>
+</div>
+</div>
+<div class="section" id="debugging-with-visual-studio">
+<h2>Debugging with Visual Studio<a class="headerlink" href="#debugging-with-visual-studio" title="Permalink to this headline">¶</a></h2>
+<p>You can debug Python in Visual Studio with the help of <a class="reference external" href="http://microsoft.github.io/PTVS">Python Tools for Visual Studio</a>.</p>
+<div class="section" id="step-1">
+<h3>Step 1<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h3>
+<p>Start the VM and open a debugger communication channel:</p>
+<div class="highlight-python"><div class="highlight"><pre>!startvm
+!evalstring -l py &quot;import ptvsd; ptvsd.enable_attach(secret=&#39;my_secret&#39;)&quot;
+</pre></div>
+</div>
+<p>Where <code class="docutils literal"><span class="pre">my_secret</span></code> can be any string that you will later specify in the Visual
+Studio attach dialog. See the <a class="reference external" href="https://github.com/Microsoft/PTVS/wiki/Cross-Platform-Remote-Debugging#preparing-the-script-for-debugging">ptvsd</a> documentation for details.</p>
+</div>
+<div class="section" id="step-2">
+<h3>Step 2<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h3>
+<p>Open your script in Visual Studio and set any breakpoints desired. Or, you can
+just let it run until an unhandled exception is encountered.</p>
+<p>Run your script with <code class="docutils literal"><span class="pre">-m</span> <span class="pre">ptvsdrun</span></code> prefixed:</p>
+<div class="highlight-python"><div class="highlight"><pre>!runscript -l py -- -m ptvsdrun &lt;your script&gt; [your script args]
+</pre></div>
+</div>
+<p>At this stage, the debugger will be in a <code class="docutils literal"><span class="pre">*BUSY*</span></code> state, waiting for you to
+attach.</p>
+</div>
+<div class="section" id="step-3">
+<h3>Step 3<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h3>
+<p>In Visual Studio, open the <cite>Attach To Process</cite> dialog (default
+shortcut: Ctrl-Alt-P) and set the transport to <cite>Python remote (ptvsd)</cite>.</p>
+<p>Set the qualifier to <a class="reference external" href="mailto:my_secret&#37;&#52;&#48;localhost">my_secret<span>&#64;</span>localhost</a> and hit Enter. Your debugger process
+should show up in the list. Click Attach and off you go. You can now debug as
+you do in Visual Studio.</p>
+</div>
+<div class="section" id="step-4">
+<h3>Step 4<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h3>
+<p>Detach from Visual Studio and clean up the VM with:</p>
+<div class="highlight-python"><div class="highlight"><pre>!stopvm
+</pre></div>
+</div>
+<p>This will destroy the Python (and other providers&#8217;) virtual machines and reset
+their state.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p><code class="docutils literal"><span class="pre">ptvs.enable_attach</span></code> creates a background thread in the debugger process
+and opens a socket. Unfortunately, Python cleanup is not comprehensive and
+will not clean up all background threads that it started on behalf of
+scripts.</p>
+<p class="last">This means TODO</p>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Ruby.html" class="btn btn-neutral float-right" title="Ruby Script Provider" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="StackFrame.html" class="btn btn-neutral" title="StackFrame class" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft Corporation.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

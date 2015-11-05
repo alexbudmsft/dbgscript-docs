@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dbgscript Module &mdash; DbgScript 1.0.3 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="DbgScript 1.0.3 documentation" href="../index.html"/>
+        <link rel="up" title="Python Script Provider" href="../Python.html"/>
+        <link rel="next" title="Thread class" href="Thread.html"/>
+        <link rel="prev" title="Python Script Provider" href="../Python.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> DbgScript
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Installation.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Installation.html#rd-party-provider-registration">3rd Party Provider Registration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial.html">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial.html#basics">Basics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#running-scripts">Running Scripts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#ad-hoc-evaluation">Ad-hoc Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#other-entry-points">Other Entry Points</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Tutorial.html#scriptpath">!scriptpath</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../Tutorial.html#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Reference.html">DbgScript Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Reference.html#debugger-entry-points">Debugger Entry Points</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#runscript">!runscript</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#description">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#evalstring">!evalstring</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id1">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id2">Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id3">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#scriptpath">!scriptpath</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id4">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id5">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#startvm">!startvm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id6">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id7">Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Reference.html#stopvm">!stopvm</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id8">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id9">Description</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Python.html">Python Script Provider</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">dbgscript Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Thread.html">Thread class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TypedObject.html">TypedObject class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StackFrame.html">StackFrame class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Tips.html">Tips and Tricks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Tips.html#dropping-into-a-repl">Dropping into a REPL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tips.html#debugging-with-pdb">Debugging with pdb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tips.html#debugging-with-visual-studio">Debugging with Visual Studio</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Tips.html#step-1">Step 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Tips.html#step-2">Step 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Tips.html#step-3">Step 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Tips.html#step-4">Step 4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Ruby.html">Ruby Script Provider</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/DbgScript.html">DbgScript Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/Thread.html">Thread class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/TypedObject.html">TypedObject class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/StackFrame.html">StackFrame class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ruby/Tips.html">Tips and Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Lua.html">Lua Script Provider</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/dbgscript.html">dbgscript Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/Thread.html">Thread class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/StackFrame.html">StackFrame class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/TypedObject.html">TypedObject class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Lua/Tips.html">Tips and Tricks</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">DbgScript</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../Python.html">Python Script Provider</a> &raquo;</li>
+      
+    <li>dbgscript Module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/Python/dbgscript.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <span class="target" id="module-dbgscript"></span><div class="section" id="dbgscript-module">
+<h1>dbgscript Module<a class="headerlink" href="#dbgscript-module" title="Permalink to this headline">¶</a></h1>
+<p>The dbgscript module provides a set of top-level APIs that serve as an entry
+point in obtaining other classes.</p>
+<p>You do not need to <code class="docutils literal"><span class="pre">import</span> <span class="pre">dbgscript</span></code>. It is already visible in the global
+namespace.</p>
+<dl class="method">
+<dt id="dbgscript.get_global">
+<code class="descclassname">dbgscript.</code><code class="descname">get_global</code><span class="sig-paren">(</span><em>symbol</em><span class="sig-paren">)</span> &rarr; TypedObject<a class="headerlink" href="#dbgscript.get_global" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a TypedObject from a global variable in the process identified by
+<cite>symbol</cite>. Symbol should be module-qualified for best results. E.g.
+<code class="docutils literal"><span class="pre">foo!bar</span></code>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.current_thread">
+<code class="descclassname">dbgscript.</code><code class="descname">current_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; Thread<a class="headerlink" href="#dbgscript.current_thread" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current thread in the process.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.get_threads">
+<code class="descclassname">dbgscript.</code><code class="descname">get_threads</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; tuple of Thread<a class="headerlink" href="#dbgscript.get_threads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the collection of threads in the process.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.create_typed_object">
+<code class="descclassname">dbgscript.</code><code class="descname">create_typed_object</code><span class="sig-paren">(</span><em>type</em>, <em>addr</em><span class="sig-paren">)</span> &rarr; TypedObject<a class="headerlink" href="#dbgscript.create_typed_object" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a <a class="reference internal" href="TypedObject.html#dbgscript.TypedObject" title="dbgscript.TypedObject"><code class="xref py py-class docutils literal"><span class="pre">TypedObject</span></code></a> from an address and type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Prefer using the fully-qualfied type name (i.e. including the module prefix)
+as it will accelerate symbol lookup dramatically. I.e. <code class="docutils literal"><span class="pre">module!Foo</span></code>, not
+<code class="docutils literal"><span class="pre">Foo</span></code>.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.read_ptr">
+<code class="descclassname">dbgscript.</code><code class="descname">read_ptr</code><span class="sig-paren">(</span><em>addr</em><span class="sig-paren">)</span> &rarr; int<a class="headerlink" href="#dbgscript.read_ptr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a pointer value from the virtual address space of the target process.
+<code class="docutils literal"><span class="pre">addr</span></code> must be a valid (accessible) address. This will be 8 bytes on an
+x64 target.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.read_bytes">
+<code class="descclassname">dbgscript.</code><code class="descname">read_bytes</code><span class="sig-paren">(</span><em>addr</em>, <em>count</em><span class="sig-paren">)</span> &rarr; bytes<a class="headerlink" href="#dbgscript.read_bytes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read <cite>count</cite> bytes from <cite>addr</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.get_nearest_sym">
+<code class="descclassname">dbgscript.</code><code class="descname">get_nearest_sym</code><span class="sig-paren">(</span><em>addr</em><span class="sig-paren">)</span> &rarr; str<a class="headerlink" href="#dbgscript.get_nearest_sym" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lookup the nearest symbol to address <cite>addr</cite>. Operates similar to the debugger
+<code class="docutils literal"><span class="pre">ln</span></code> command.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.get_peb">
+<code class="descclassname">dbgscript.</code><code class="descname">get_peb</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &rarr; int<a class="headerlink" href="#dbgscript.get_peb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the address of the current process&#8217; PEB.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.field_offset">
+<code class="descclassname">dbgscript.</code><code class="descname">field_offset</code><span class="sig-paren">(</span><em>type</em>, <em>field</em><span class="sig-paren">)</span> &rarr; int<a class="headerlink" href="#dbgscript.field_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtain the offset of <cite>field</cite> in <cite>type</cite>. Behaves like <code class="docutils literal"><span class="pre">offsetof</span></code> macro in C.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.start_buffering">
+<code class="descclassname">dbgscript.</code><code class="descname">start_buffering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dbgscript.start_buffering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start an output buffering session. All output from this point will be
+buffered in 8K chunks. This can help improve performance when writing a lot
+of content in a loop, as the WinDbg command window will not be redrawn after
+every line of output.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.stop_buffering">
+<code class="descclassname">dbgscript.</code><code class="descname">stop_buffering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dbgscript.stop_buffering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stop an output buffering session. The buffer will also automatically be
+flushed on script terminaton, for any reason (unhandled exception or otherwise).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.execute_command">
+<code class="descclassname">dbgscript.</code><code class="descname">execute_command</code><span class="sig-paren">(</span><em>cmd</em><span class="sig-paren">)</span><a class="headerlink" href="#dbgscript.execute_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes a debugger command <cite>cmd</cite> and prints the output.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dbgscript.resolve_enum">
+<code class="descclassname">dbgscript.</code><code class="descname">resolve_enum</code><span class="sig-paren">(</span><em>enum</em>, <em>val</em><span class="sig-paren">)</span> &rarr; str<a class="headerlink" href="#dbgscript.resolve_enum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains the textual name of the enumerant given an enum <cite>enum</cite> and a value
+<cite>val</cite>.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Thread.html" class="btn btn-neutral float-right" title="Thread class" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../Python.html" class="btn btn-neutral" title="Python Script Provider" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Microsoft Corporation.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.3',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
