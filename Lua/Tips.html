@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tips and Tricks &mdash; DbgScript 1.0.3 documentation</title>
+  <title>Tips and Tricks &mdash; DbgScript 1.0.4 documentation</title>
   
 
   
@@ -30,12 +30,12 @@
   
 
   
-    <link rel="top" title="DbgScript 1.0.3 documentation" href="../index.html"/>
+    <link rel="top" title="DbgScript 1.0.4 documentation" href="../index.html"/>
         <link rel="up" title="Lua Script Provider" href="../Lua.html"/>
         <link rel="prev" title="TypedObject class" href="TypedObject.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -45,17 +45,27 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
-        
-          <a href="../index.html" class="icon icon-home"> DbgScript
-        
+          
+            <a href="../index.html" class="icon icon-home"> DbgScript
+          
 
-        
-        </a>
+          
+          </a>
 
-        
+          
+            
+            
+              <div class="version">
+                1.0.4
+              </div>
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -64,92 +74,19 @@
   </form>
 </div>
 
-        
-      </div>
+          
+        </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
-          
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Installation.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Installation.html#rd-party-provider-registration">3rd Party Provider Registration</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../Tutorial.html">Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Tutorial.html#basics">Basics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#running-scripts">Running Scripts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#ad-hoc-evaluation">Ad-hoc Evaluation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Tutorial.html#other-entry-points">Other Entry Points</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Tutorial.html#scriptpath">!scriptpath</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../Tutorial.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../Reference.html">DbgScript Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Reference.html#debugger-entry-points">Debugger Entry Points</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Reference.html#runscript">!runscript</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#description">Description</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../Reference.html#evalstring">!evalstring</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id1">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id2">Description</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id3">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../Reference.html#scriptpath">!scriptpath</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id4">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id5">Description</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../Reference.html#startvm">!startvm</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id6">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id7">Description</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../Reference.html#stopvm">!stopvm</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id8">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Reference.html#id9">Description</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../Python.html">Python Script Provider</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Python/dbgscript.html">dbgscript Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Python/Thread.html">Thread class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Python/TypedObject.html">TypedObject class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Python/StackFrame.html">StackFrame class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Python/Tips.html">Tips and Tricks</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Python/Tips.html#dropping-into-a-repl">Dropping into a REPL</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Python/Tips.html#debugging-with-pdb">Debugging with pdb</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../Python/Tips.html#debugging-with-visual-studio">Debugging with Visual Studio</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../Python/Tips.html#step-1">Step 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Python/Tips.html#step-2">Step 2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Python/Tips.html#step-3">Step 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../Python/Tips.html#step-4">Step 4</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../Ruby.html">Ruby Script Provider</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ruby/DbgScript.html">DbgScript Module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ruby/Thread.html">Thread class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ruby/TypedObject.html">TypedObject class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ruby/StackFrame.html">StackFrame class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ruby/Tips.html">Tips and Tricks</a></li>
-</ul>
-</li>
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Reference.html">DbgScript Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Python.html">Python Script Provider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Ruby.html">Ruby Script Provider</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../Lua.html">Lua Script Provider</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="dbgscript.html">dbgscript Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Thread.html">Thread class</a></li>
@@ -160,10 +97,10 @@
 </li>
 </ul>
 
+            
           
-        
+        </div>
       </div>
-      &nbsp;
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -178,7 +115,13 @@
       
       <div class="wy-nav-content">
         <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
@@ -195,7 +138,8 @@
   </ul>
   <hr/>
 </div>
-          <div role="main" class="document">
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="tips-and-tricks">
 <h1>Tips and Tricks<a class="headerlink" href="#tips-and-tricks" title="Permalink to this headline">¶</a></h1>
@@ -203,6 +147,7 @@
 </div>
 
 
+           </div>
           </div>
           <footer>
   
@@ -219,8 +164,9 @@
   <div role="contentinfo">
     <p>
         &copy; Copyright 2015, Microsoft Corporation.
+
     </p>
-  </div>
+  </div> 
 
 </footer>
 
@@ -238,7 +184,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0.3',
+            VERSION:'1.0.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
