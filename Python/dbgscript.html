@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>dbgscript Module &mdash; DbgScript 1.0.5 documentation</title>
+  <title>dbgscript Module &mdash; DbgScript 1.0.6 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="DbgScript 1.0.5 documentation" href="../index.html"/>
+    <link rel="top" title="DbgScript 1.0.6 documentation" href="../index.html"/>
         <link rel="up" title="Python Script Provider" href="../Python.html"/>
         <link rel="next" title="Thread class" href="Thread.html"/>
         <link rel="prev" title="Python Script Provider" href="../Python.html"/>
@@ -72,7 +72,7 @@
             
             
               <div class="version">
-                1.0.5
+                1.0.6
               </div>
             
           
@@ -283,6 +283,20 @@ x64 target.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="dbgscript.search_memory">
+<code class="descclassname">dbgscript.</code><code class="descname">search_memory</code><span class="sig-paren">(</span><em>start</em>, <em>size</em>, <em>pattern</em>, <em>pattern_granularity</em><span class="sig-paren">)</span> &rarr; int<a class="headerlink" href="#dbgscript.search_memory" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div><p>Search the address space from [start, start + size) for <code class="docutils literal"><span class="pre">pattern</span></code>. Only
+matches at <code class="docutils literal"><span class="pre">pattern_granularity</span></code> are considered. Returns location of match,
+or throws LookupError if not found.</p>
+<p>The length of <code class="docutils literal"><span class="pre">pattern</span></code> must be a multiple of <code class="docutils literal"><span class="pre">pattern_granularity</span></code>.</p>
+</div></blockquote>
+<div class="versionadded">
+<p><span class="versionmodified">New in version 1.0.6.</span></p>
+</div>
+</dd></dl>
+
+<dl class="method">
 <dt id="dbgscript.start_buffering">
 <code class="descclassname">dbgscript.</code><code class="descname">start_buffering</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dbgscript.start_buffering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Start an output buffering session. All output from this point will be
@@ -353,7 +367,7 @@ flushed on script terminaton, for any reason (unhandled exception or otherwise).
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0.5',
+            VERSION:'1.0.6',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
