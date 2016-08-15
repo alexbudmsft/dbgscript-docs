@@ -282,12 +282,29 @@ x64 target.</p>
 <dl class="method">
 <dt id="dbgscript.searchMemory">
 <code class="descclassname">dbgscript.</code><code class="descname">searchMemory</code><span class="sig-paren">(</span><em>start</em>, <em>size</em>, <em>pattern</em>, <em>pattern_granularity</em><span class="sig-paren">)</span> &rarr; integer<a class="headerlink" href="#dbgscript.searchMemory" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Search the address space from [start, start + size) for <code class="docutils literal"><span class="pre">pattern</span></code>. Only
-matches at <code class="docutils literal"><span class="pre">pattern_granularity</span></code> are considered. Returns location of match,
-or throws an error if not found.</p>
-<p>The length of <code class="docutils literal"><span class="pre">pattern</span></code> must be a multiple of <code class="docutils literal"><span class="pre">pattern_granularity</span></code>.</p>
-</div></blockquote>
+<dd><p>Search the address space from [<cite>start</cite>, <cite>start</cite> + <cite>size</cite>) for <cite>pattern</cite>.
+Throws an error if no match found.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>start</strong> (<em>integer</em>) &#8211; Start of address space to search.</li>
+<li><strong>size</strong> (<em>integer</em>) &#8211; Amount of bytes to search.</li>
+<li><strong>pattern</strong> (<a class="reference external" href="https://docs.python.org/3.4/library/string.html#module-string" title="(in Python v3.4)"><em>string</em></a>) &#8211; Pattern to search for. <cite>#pattern</cite> must be a multiple of
+<cite>pattern_granularity</cite>.</li>
+<li><strong>pattern_granularity</strong> (<em>integer</em>) &#8211; Only consider matches at this granularity.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">location of match.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">integer</p>
+</td>
+</tr>
+</tbody>
+</table>
 <div class="versionadded">
 <p><span class="versionmodified">New in version 1.0.6.</span></p>
 </div>
